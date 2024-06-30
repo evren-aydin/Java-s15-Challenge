@@ -1,8 +1,5 @@
 package org.Workintech.LibrarySystem;
 
-import org.Workintech.LibrarySystem.Users.NormalUser;
-import org.Workintech.LibrarySystem.Users.User;
-
 import java.util.Objects;
 
 public class Book {

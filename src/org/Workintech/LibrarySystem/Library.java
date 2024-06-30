@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Library implements filterable,giveandtake {
+public class Library implements Filterable, Giveandtake {
         private String name;
         private Map<Integer,Book> books;
         private Map<Integer,User> users;
@@ -76,12 +76,15 @@ public class Library implements filterable,giveandtake {
             //Kitabu kullanıcının listesinden çıkar
             userBorrowedBooks.remove(book);
 
-            //kullanıcının başka aldığı kitap yoksa mapten çıkar
+            //kullanıcının başka aldığı kitap yoksa  kullanıcıyı listeden(mapten) çıkar
             if(userBorrowedBooks.isEmpty()){
                 borrowedBooks.remove(user);
             }
             // kitabın durumunu güncelle
             book.setStatus(true);
+
+            // kullanıcının bakiyesine kitabın fiyatını ekliyoruz.
+
             user.addBalance(book.getPrice());
             System.out.println("İade:"+ book.getPrice()+"TL iade edildi");
 
